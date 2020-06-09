@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+  <a class="navbar-brand" href="#">NgAPP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
+    aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample09">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/project" routerLinkActive="active">Project</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-2 my-2 my-md-0">
+      <li class="nav-item dropdown" *ngIf="authService.loggedIn()">
+        <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Usuario
+        </a>
+        <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
+          <a class="dropdown-item " routerLink="/usuario">perfil</a>
+          <!-- <div class="dropdown-divider"></div> -->
+          <!-- <a class="dropdown-item" href="#">Teste</a>
+            <a class="dropdown-item" href="#">Test2</a> -->
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" style="cursor:pointer" (click)="authService.logoutUser()">Sair</a>
+          <!-- <a class="dropdown-item" href="#">Sair</a> -->
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-item nav-link  mr-md-2" *ngIf="!authService.loggedIn()" routerLink="Auth/login">Login</a>
+
+      </li>
+      <li class="nav-item active">
+        <a class="nav-item nav-link  mr-md-2" *ngIf="!authService.loggedIn()" routerLink="Auth/register">Register</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- <div class="container">
+    <div class="row"> -->
+<!-- <div class="col-sm-9 col-md-7 col-lg-5 mx-auto "> -->
+<!-- <div class="card-header my-5"> -->
+
+<router-outlet> </router-outlet>
+
+<body class="bg-light">
+  <!-- </div>
+  </div> -->
+  <!-- </div>     -->
+  <!-- </div>   -->
+</body>
